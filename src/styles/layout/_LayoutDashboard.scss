@@ -1,0 +1,65 @@
+.layout-dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout-dashboard__header {
+    display: flex;
+    padding: 17px 34px;
+
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+
+    >img {
+        display: none;
+
+        @include for-size(md) {
+            height: 32px;
+            display: block;
+        }
+    }
+}
+
+.layout-dashboard__main {
+    display: flex;
+    flex-grow: 1;
+
+    &__aside {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 0.5px solid #D2D2D2;
+
+        >* {
+            padding: 24px;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+
+        &__navigation {
+            background-color: white;
+
+            &:hover {
+                background-color: rgba(102, 102, 102, 0.575);
+            }
+
+            &.router-link-active {
+                @extend .layout-dashboard__main__aside;
+                background-color: rgba(128, 128, 128, 0.514);
+            }
+        }
+
+        &__navigation--active {
+            @extend .layout-dashboard__main__aside;
+            background-color: rgba(128, 128, 128, 0.514);
+        }
+    }
+
+
+}
