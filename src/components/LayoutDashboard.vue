@@ -7,8 +7,11 @@
 			<aside class="layout-dashboard__main__aside">
 				<router-link class="layout-dashboard__main__aside__navigation" to="/" exact>Home</router-link>
 				<router-link class="layout-dashboard__main__aside__navigation" to="/sales">Sales</router-link>
+				<router-link class="layout-dashboard__main__aside__navigation" to="/add-product">Add Product</router-link>
 			</aside>
-			<router-view />
+			<main>
+				<router-view />
+			</main>
 		</div>
 	</div>
 </template>

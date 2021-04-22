@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import LayoutDashboard from '@/components/LayoutDashboard.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
 	{
 		path: '/',
-		component: LayoutDashboard,
+		component: () => import('@/components/LayoutDashboard.vue'),
 		children: [
 			{ path: '', component: () => import('@/views/home/index.vue') },
 			{
@@ -21,6 +20,7 @@ const routes = [
 					},
 				],
 			},
+			{ path: 'add-product', component: () => import('@/views/addProduct/index.vue') },
 		],
 	},
 ]

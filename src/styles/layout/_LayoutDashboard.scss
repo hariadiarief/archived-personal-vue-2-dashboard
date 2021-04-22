@@ -28,7 +28,6 @@
     &__aside {
         display: flex;
         flex-direction: column;
-        width: fit-content;
 
         background: #FFFFFF 0% 0% no-repeat padding-box;
         border: 0.5px solid #D2D2D2;
@@ -54,12 +53,9 @@
                 background-color: rgba(128, 128, 128, 0.514);
             }
         }
-
-        &__navigation--active {
-            @extend .layout-dashboard__main__aside;
-            background-color: rgba(128, 128, 128, 0.514);
-        }
     }
 
-
+    main {
+        width: 100%;
+    }
 }
