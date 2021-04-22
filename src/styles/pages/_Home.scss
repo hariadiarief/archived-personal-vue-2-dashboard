@@ -52,3 +52,18 @@
         margin-bottom: 16px;
     }
 }
+
+.reportrange-text[data-v-4391f606] {
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin-right: 12px;
+    }
+}
+
+.calendars {
+    @include for-size(md) {
+        flex-wrap: nowrap !important;
+    }
+}

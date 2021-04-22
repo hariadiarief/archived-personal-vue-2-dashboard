@@ -5,9 +5,11 @@
 		</header>
 		<div class="layout-dashboard__main">
 			<aside class="layout-dashboard__main__aside">
-				<router-link class="layout-dashboard__main__aside__navigation" to="/" exact>Home</router-link>
-				<router-link class="layout-dashboard__main__aside__navigation" to="/sales">Sales</router-link>
-				<router-link class="layout-dashboard__main__aside__navigation" to="/add-product">Add Product</router-link>
+				<router-link class="layout-dashboard__main__aside__navigation" to="/" exact>
+					<b-icon icon="house-fill"></b-icon>
+				</router-link>
+				<router-link class="layout-dashboard__main__aside__navigation" to="/sales"> <b-icon icon="cart-fill"> </b-icon> </router-link>
+				<router-link class="layout-dashboard__main__aside__navigation" to="/add-product"> <b-icon icon="bag-plus-fill"> </b-icon> </router-link>
 			</aside>
 			<main>
 				<router-view />

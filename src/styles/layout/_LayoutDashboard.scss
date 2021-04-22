@@ -43,14 +43,19 @@
 
         &__navigation {
             background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(93, 102, 102);
 
             &:hover {
                 background-color: rgba(102, 102, 102, 0.575);
             }
 
             &.router-link-active {
-                @extend .layout-dashboard__main__aside;
+                @extend .layout-dashboard__main__aside__navigation;
                 background-color: rgba(128, 128, 128, 0.514);
+                color: rgb(0, 174, 255);
             }
         }
     }
