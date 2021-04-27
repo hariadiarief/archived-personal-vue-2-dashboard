@@ -1,7 +1,7 @@
 <template>
 	<div class="food">
 		<h1>Food</h1>
-		<div class="grid cell-6 cell-850-12 cell-450-6 cell-380-3">
+		<div class="grid column-1 column-md-2 column-lg-6 gap-8 gap-md-18">
 			<div></div>
 			<div></div>
 			<div></div>
@@ -18,7 +18,7 @@
 	</div>
 </template>
 
-<script lang='ts'>
+<script>
 export default {
 	name: 'Food',
 }
@@ -29,5 +29,8 @@ export default {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+}
+
+.grid {
 }
 </style>

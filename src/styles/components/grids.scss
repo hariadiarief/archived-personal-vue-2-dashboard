@@ -1,37 +1,58 @@
-.grid>div {
-    height: 25px;
-    background: #ccc;
-    border: 1px solid #aaa;
-    box-sizing: border-box;
-    float: left;
-}
-
 .grid {
-    width: 100%;
-}
+    display: grid;
 
-$max: 16;
-
-@for $i from 1 through $max {
-
-    $equ: 100% / $i;
-
-    .grid.cell-#{ $i }>div {
-        width: $equ;
+    >div {
+        height: 25px;
+        background: #ccc;
+        border: 1px solid black;
     }
 }
 
-$map: (850:12, 450:6, 380:3);
+@for $index from 1 through $max-column {
+    .grid.column-#{ $index } {
+        grid-template-columns: repeat(auto-fill, minmax(100% / $index, 1fr));
+    }
+}
 
-@each $key,
-$val in $map {
-    @media all and (max-width: $key + px) {
-        @for $i from 1 through $val {
-            $equ: 100% / $i;
+@for $index from 1 through $max-gap {
+    .grid.gap-#{$index} {
+        gap: #{$index}px;
+    }
 
-            .grid.cell-#{$key}-#{$i}>div {
-                width: $equ;
+    .grid.gap-column-#{$index} {
+        gap: #{$index}px;
+    }
+
+    .grid.gap-row-#{$index} {
+        gap: #{$index}px;
+    }
+}
+
+//  Media Query
+@each $size in $sizes {
+    @include for-size(#{$size}) {
+        @for $index from 1 through $max-column {
+            .grid.column-#{$size}-#{$index} {
+                grid-template-columns: repeat(auto-fill, minmax(100% / $index, 1fr));
             }
         }
     }
+
+    @include for-size(#{$size}) {
+        @for $index from 1 through $max-gap {
+            .grid.gap-#{$size}-#{$index} {
+                gap: #{$index}px;
+            }
+
+            .grid.gap-column-#{$size}-#{$index} {
+                gap: #{$index}px;
+            }
+
+            .grid.gap-row-#{$size}-#{$index} {
+                gap: #{$index}px;
+            }
+        }
+    }
+
+
 }
