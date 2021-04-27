@@ -32,9 +32,25 @@
 						<b-icon icon="cart-fill" scale="2"></b-icon>
 					</div>
 				</div>
-				<div>
-					<div>Filter :</div>
-					<div>{{ moment(this.dateRange.startDate).format('DD MMM YYYY') }} S.D {{ moment(this.dateRange.endDate).format('DD MMM YYYY') }}</div>
+
+				<div class="home__content__item__container">
+					<div class="home__content__item">
+						<div>
+							<div>Filter :</div>
+							<select name="" id="">
+								<option value=""></option>
+							</select>
+							<!-- <div>{{ moment(this.dateRange.startDate).format('DD MMM YYYY') }} S.D {{ moment(this.dateRange.endDate).format('DD MMM YYYY') }}</div> -->
+						</div>
+						<BarChart :startDate="this.dateRange.startDate" :endDate="this.dateRange.endDate" />
+					</div>
+					<div class="home__content__item">
+						<div>
+							<div>Filter :</div>
+							<div>{{ moment(this.dateRange.startDate).format('DD MMM YYYY') }} S.D {{ moment(this.dateRange.endDate).format('DD MMM YYYY') }}</div>
+						</div>
+						<BarChart :startDate="this.dateRange.startDate" :endDate="this.dateRange.endDate" />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -44,25 +60,23 @@
 <script>
 import DateRangePicker from 'vue2-daterange-picker'
 import moment from 'moment'
+import BarChart from './BarChart'
 
 export default {
 	name: 'Home',
-	components: { DateRangePicker },
+	components: {
+		DateRangePicker,
+		BarChart,
+	},
 	data() {
 		return {
 			isMarketIsghtShow: true,
-			show: false,
-			name: 'masagus hariadi arief',
+
 			dateRange: {
 				startDate: moment().format('YYYY-MM-DD'),
 				endDate: moment().format('YYYY-MM-DD'),
 			},
 		}
-	},
-	watch: {
-		show(newVal) {
-			console.log('Alert is now ' + (newVal ? 'visible' : 'hidden'))
-		},
 	},
 	methods: {
 		updateValues(event) {

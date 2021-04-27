@@ -13,11 +13,8 @@ const routes = [
 				path: 'sales',
 				component: () => import('@/views/sales/index.vue'),
 				children: [
-					{ path: '', component: () => import('@/views/sales/food/index.vue') },
-					{
-						path: 'beverage',
-						component: () => import('@/views/sales/beverage/index.vue'),
-					},
+					{ path: '', component: () => import('@/views/sales/TabFood.vue') },
+					{ path: 'beverage', component: () => import('@/views/sales/TabBeverage.vue') },
 				],
 			},
 			{ path: 'add-product', component: () => import('@/views/addProduct/index.vue') },
