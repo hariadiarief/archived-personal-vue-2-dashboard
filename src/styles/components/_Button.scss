@@ -1,0 +1,33 @@
+.button {
+    min-width: 75px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+
+    border-radius: 10px;
+    padding: 5px 10px;
+
+    transform: scale(.98);
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1);
+        transition: 0.5s;
+    }
+
+    &--primary {
+        @extend .button;
+        color: #FAFAFA;
+        background: #17948C;
+        border: 1px solid #17948C;
+    }
+
+    &--denger {
+        @extend .button;
+        color: #FAFAFA;
+        background: #EB5757;
+        border: 1px solid #EB5757;
+    }
+}

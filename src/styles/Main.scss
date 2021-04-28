@@ -9,12 +9,10 @@
 //vendors
 
 //components
-@import './components/grids.scss';
+@import './components/Grids', './components/Form', './components/Button';
 
 //layout
 @import './layout/LayoutDashboard';
-
-//components
 
 //pages
 @import './pages/Home';

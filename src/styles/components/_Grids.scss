@@ -1,11 +1,5 @@
 .grid {
     display: grid;
-
-    >div {
-        height: 25px;
-        background: #ccc;
-        border: 1px solid black;
-    }
 }
 
 @for $index from 1 through $max-column {
@@ -20,11 +14,11 @@
     }
 
     .grid.gap-column-#{$index} {
-        gap: #{$index}px;
+        grid-column-gap: #{$index}px;
     }
 
     .grid.gap-row-#{$index} {
-        gap: #{$index}px;
+        grid-row-gap: #{$index}px;
     }
 }
 
@@ -45,11 +39,11 @@
             }
 
             .grid.gap-column-#{$size}-#{$index} {
-                gap: #{$index}px;
+                grid-column-gap: #{$index}px;
             }
 
             .grid.gap-row-#{$size}-#{$index} {
-                gap: #{$index}px;
+                grid-row-gap: #{$index}px;
             }
         }
     }
