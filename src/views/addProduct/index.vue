@@ -36,7 +36,7 @@
 								<input type="file" name="imageURL" @change="setImage" />
 								<label htmlFor="file">Choose Image</label>
 							</button>
-							<button type="button" class="button--denger" v-else v-on:click="imageURL = null">remove Image</button>
+							<button type="button" class="button--denger" v-else @click="imageURL = null">remove Image</button>
 						</div>
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 				<div class="form__card__field--col2">
 					<div>
 						<div class="title__field">production price</div>
-						<input class="form__card__input" type="number" min="0" v-model="productionPrice" />
+						<input class="form__card__input" type="number" min="0" v-model="productionPrice" @keydown="console.log($event.target.value)" />
 					</div>
 					<div>
 						<div class="title__field">selling price</div>
@@ -80,6 +80,9 @@ export default {
 		setImage(event) {
 			this.imageURL = URL.createObjectURL(event.target.files[0])
 		},
+	},
+	created() {
+		this.console = window.console
 	},
 }
 </script>
